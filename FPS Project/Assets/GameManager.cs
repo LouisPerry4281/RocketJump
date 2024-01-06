@@ -25,16 +25,16 @@ public class GameManager : MonoBehaviour
 
     private void KillObject()
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
 
     private void KillPlayer()
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
 
     private void KillEnemy()
     {
-        throw new NotImplementedException();
+        //throw new NotImplementedException();
     }
 }

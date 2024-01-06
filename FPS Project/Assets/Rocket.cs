@@ -5,7 +5,7 @@ using UnityEngine;
 public class Rocket : MonoBehaviour
 {
     Rigidbody rb;
-    [SerializeField] LayerMask screenLayer;
+    [SerializeField] GameObject explosionObject;
 
     private float damageNum;
     private float shotSpeedNum;
@@ -38,16 +38,7 @@ public class Rocket : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //Check for ground or enemy hit
-        if (collision.gameObject.layer == 3 || collision.gameObject.layer == 6)
-        {
-            Explode();
-        }
-    }
-
-    private void OnCollisionStay(Collision collision)
-    {
-        //Check for ground or enemy hit
-        if (collision.gameObject.layer == 3 || collision.gameObject.layer == 6)
+        if (collision.gameObject.layer == 3 || collision.gameObject.layer == 6 || collision.gameObject.layer == 7)
         {
             Explode();
         }
@@ -55,6 +46,10 @@ public class Rocket : MonoBehaviour
 
     private void Explode()
     {
+
+        print("Explode");
+        Instantiate(explosionObject, transform.position, Quaternion.identity);
+
         GetComponent<MeshRenderer>().enabled = false;
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
