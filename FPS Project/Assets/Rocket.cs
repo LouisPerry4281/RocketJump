@@ -37,7 +37,7 @@ public class Rocket : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //Check for ground or enemy hit
+        //Check for ground, enemy or object hit
         if (collision.gameObject.layer == 3 || collision.gameObject.layer == 6 || collision.gameObject.layer == 7)
         {
             Explode();
@@ -46,8 +46,6 @@ public class Rocket : MonoBehaviour
 
     private void Explode()
     {
-
-        print("Explode");
         Instantiate(explosionObject, transform.position, Quaternion.identity);
 
         GetComponent<MeshRenderer>().enabled = false;
@@ -56,6 +54,7 @@ public class Rocket : MonoBehaviour
 
         foreach (Collider inRange in colliders)
         {
+            print("flag");
             Rigidbody targetRB = inRange.GetComponent<Rigidbody>();
             if (inRange.gameObject.name == "PlayerCollider")
             {
@@ -63,18 +62,13 @@ public class Rocket : MonoBehaviour
                 return;
             }
 
-            EnemyHealth enemyHealth = inRange.GetComponent<EnemyHealth>();
-            if (enemyHealth != null)
-            {
-                enemyHealth.TakeDamage(damageNum);
-            }
-
-            if (targetRB != null)
+            else if (targetRB != null)
             {
                 targetRB.AddExplosionForce(explosionForce, transform.position, explosionRadius, verticalForce, ForceMode.Impulse);
             }
         }
 
+        print("Destroyed");
         Destroy(gameObject);
     }
 }
