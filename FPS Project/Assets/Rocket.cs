@@ -46,6 +46,8 @@ public class Rocket : MonoBehaviour
         {
             Explode();
         }
+
+        Destroy(gameObject);
     }
 
     private void Explode()
@@ -60,7 +62,6 @@ public class Rocket : MonoBehaviour
 
         foreach (Collider inRange in colliders)
         {
-            print("flag");
             Rigidbody targetRB = inRange.GetComponent<Rigidbody>();
             if (inRange.gameObject.name == "PlayerCollider")
             {
@@ -74,7 +75,6 @@ public class Rocket : MonoBehaviour
             }
         }
 
-        print("Destroyed");
         Destroy(gameObject);
     }
 }
