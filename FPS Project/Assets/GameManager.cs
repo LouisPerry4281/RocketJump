@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+     //This is removed for now//
     public void ScanKillTarget(GameObject objToKill)
     {
         switch(objToKill.layer)
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-
+    
     private void KillObject()
     {
         //throw new NotImplementedException();

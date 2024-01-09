@@ -9,6 +9,7 @@ public class Rocket : MonoBehaviour
 
     private float damageNum;
     private float shotSpeedNum;
+    private bool hasExploded = false;
 
     [Header("Explosion Variables")]
     [SerializeField] float explosionForce;
@@ -37,6 +38,9 @@ public class Rocket : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (hasExploded)
+            return;
+
         //Check for ground, enemy or object hit
         if (collision.gameObject.layer == 3 || collision.gameObject.layer == 6 || collision.gameObject.layer == 7)
         {
@@ -46,6 +50,8 @@ public class Rocket : MonoBehaviour
 
     private void Explode()
     {
+        hasExploded = true;
+
         Instantiate(explosionObject, transform.position, Quaternion.identity);
 
         GetComponent<MeshRenderer>().enabled = false;

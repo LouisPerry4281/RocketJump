@@ -15,6 +15,7 @@ public class EnemyHealth : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
+    /* //Design Change, this may not be useful//
     public void TakeDamage(float damageToTake)
     {
         health -= damageToTake;
@@ -31,4 +32,5 @@ public class EnemyHealth : MonoBehaviour
 
         gameManager.ScanKillTarget(gameObject);
     }
+    */
 }
