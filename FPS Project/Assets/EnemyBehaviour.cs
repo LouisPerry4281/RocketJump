@@ -5,8 +5,13 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
+    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] Transform bulletSpawner;
+
     public float aggroRange;
     public float reloadTime;
+
+    public float shotSpeed;
 
     bool isReloaded = true;
 
@@ -27,8 +32,10 @@ public class EnemyBehaviour : MonoBehaviour
     {
         isReloaded = false;
 
-        //Shoot Logic
-        print("Shoot");
+        GameObject bulletInstance = Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
+        Vector3 bulletDir = playerTrans.position - bulletInstance.transform.position;
+        playerTrans.GetComponent<Rigidbody>().velocity = bulletDir * shotSpeed;
+
 
         yield return new WaitForSeconds(reloadTime);
 

@@ -139,7 +139,7 @@ public class PlayerMovement : MonoBehaviour
 
     void ControlDrag()
     {
-        //Switches the drag amount depending on whether or not the player is *Airborne* (See what I did there???)
+        //Switches the drag amount depending on whether or not the player is airborne
         if (isGrounded)
         {
             rb.drag = groundDrag;
