@@ -11,8 +11,8 @@ public class KillPlane : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        gameManager.ScanKillTarget(gameObject);
+        gameManager.ScanKillTarget(other.gameObject);
     }
 }

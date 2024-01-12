@@ -5,7 +5,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-     //This is removed for now//
+    CheckPointManager checkPointManager;
+
+    private void Start()
+    {
+        checkPointManager = GetComponent<CheckPointManager>();
+    }
+
     public void ScanKillTarget(GameObject objToKill)
     {
         switch(objToKill.layer)
@@ -31,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     private void KillPlayer()
     {
-        //throw new NotImplementedException();
+        checkPointManager.RespawnPlayer();
     }
 
     private void KillEnemy()

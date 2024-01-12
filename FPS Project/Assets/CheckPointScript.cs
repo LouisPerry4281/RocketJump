@@ -17,6 +17,7 @@ public class CheckPointScript : MonoBehaviour
         if (other.gameObject.layer == 8)
         {
             gameManager.GetComponent<CheckPointManager>().ChangeSpawnLocation(transform.position);
+            gameManager.GetComponent<UIManager>().CheckpointReached();
             Destroy(gameObject);
         }
     }
