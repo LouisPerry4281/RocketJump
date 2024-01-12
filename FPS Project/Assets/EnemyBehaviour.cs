@@ -34,7 +34,7 @@ public class EnemyBehaviour : MonoBehaviour
 
         GameObject bulletInstance = Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
         Vector3 bulletDir = playerTrans.position - bulletInstance.transform.position;
-        playerTrans.GetComponent<Rigidbody>().velocity = bulletDir * shotSpeed;
+        bulletInstance.GetComponent<Rigidbody>().velocity = bulletDir * shotSpeed;
 
 
         yield return new WaitForSeconds(reloadTime);
