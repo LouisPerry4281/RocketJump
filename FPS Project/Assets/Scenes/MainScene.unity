@@ -1252,7 +1252,7 @@ GameObject:
   - component: {fileID: 557671010}
   - component: {fileID: 557671009}
   m_Layer: 0
-  m_Name: KillPlane (1)
+  m_Name: KillPlane3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4274,42 +4274,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 52457805231428038, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
-      propertyPath: m_ClearFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 52457805310117611, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 52457805802293420, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 52457806493923618, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 52457806613177456, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 52457806877518830, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 862761860224527249, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2414325169572963765, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4559381420468555268, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6680485920623584097, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
       propertyPath: m_Name
       value: _PlayerPrefab
@@ -4328,7 +4292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7544772178368955693, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 627.4
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7544772178368955693, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
       propertyPath: m_LocalRotation.w

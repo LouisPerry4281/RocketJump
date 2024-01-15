@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 52457805310117608}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 52457805802293421}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Camera Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 52457806493923619}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Ground Check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,9 @@ GameObject:
   - component: {fileID: 8916844220183401611}
   - component: {fileID: 3395014212043849538}
   - component: {fileID: 7140304359248471453}
-  m_Layer: 8
+  - component: {fileID: 7069144980949835400}
+  - component: {fileID: 252625538}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -403,6 +405,38 @@ MonoBehaviour:
   playerMovement: {fileID: 6950729708966733456}
   extraJump: 1
   isWallRunning: 0
+--- !u!114 &7069144980949835400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52457806613177456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4a0b37a347a546a4855d741622a01b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  healingRate: 0.1
+  recoveryDelay: 3
+  currentHealth: 0
+--- !u!114 &252625538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52457806613177456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4a0b37a347a546a4855d741622a01b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  healingRate: 0.005
+  recoveryDelay: 3
+  currentHealth: 0
 --- !u!1 &52457806877518830
 GameObject:
   m_ObjectHideFlags: 0
@@ -5322,7 +5356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 862761860224527250}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Particle Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5419,6 +5453,10 @@ PrefabInstance:
     - target: {fileID: 171527776781687000, guid: 67a7e24bd17106e44b96414cadeb93f0, type: 3}
       propertyPath: m_Name
       value: Rocket Launcher
+      objectReference: {fileID: 0}
+    - target: {fileID: 171527776781687000, guid: 67a7e24bd17106e44b96414cadeb93f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 660537340789195362, guid: 67a7e24bd17106e44b96414cadeb93f0, type: 3}
       propertyPath: m_RootOrder
