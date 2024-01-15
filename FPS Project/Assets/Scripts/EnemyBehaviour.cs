@@ -10,6 +10,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public float aggroRange;
     public float reloadTime;
+    public float rotationDamping;
 
     public float shotSpeed;
 
@@ -24,8 +25,21 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void Update()
     {
+        if (InRange())
+        {
+            RotateToPlayer();
+        }
+
         if (InRange() && isReloaded)
             StartCoroutine(Shoot());
+    }
+
+    private void RotateToPlayer()
+    {
+        Vector3 lookPos = playerTrans.position - transform.position;
+        lookPos.y = 0;
+        Quaternion rotation = Quaternion.LookRotation(lookPos);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationDamping);
     }
 
     private IEnumerator Shoot()
