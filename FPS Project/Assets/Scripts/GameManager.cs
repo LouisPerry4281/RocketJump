@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
         switch(objToKill.layer)
         {
             case 6: //Enemy Layer
-                KillEnemy();
+                KillEnemy(objToKill);
                 break;
 
             case 7: //Player Layer
@@ -25,14 +25,14 @@ public class GameManager : MonoBehaviour
                 break;
 
             case 8: //Random Object Layer
-                KillObject();
+                KillObject(objToKill);
                 break;
         }
     }
     
-    private void KillObject()
+    private void KillObject(GameObject debris)
     {
-        //throw new NotImplementedException();
+        Destroy(debris);
     }
 
     private void KillPlayer()
@@ -40,8 +40,8 @@ public class GameManager : MonoBehaviour
         checkPointManager.RespawnPlayer();
     }
 
-    private void KillEnemy()
+    private void KillEnemy(GameObject enemy)
     {
-        //throw new NotImplementedException();
+        Destroy(enemy);
     }
 }

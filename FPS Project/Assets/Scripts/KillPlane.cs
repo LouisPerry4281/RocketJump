@@ -16,4 +16,3 @@ public class KillPlane : MonoBehaviour
         gameManager.ScanKillTarget(other.gameObject);
     }
 }
-// my bean smells reall bad
