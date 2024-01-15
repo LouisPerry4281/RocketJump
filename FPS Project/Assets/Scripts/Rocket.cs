@@ -41,8 +41,8 @@ public class Rocket : MonoBehaviour
         if (hasExploded)
             return;
 
-        //Check for ground, enemy or object hit
-        if (collision.gameObject.layer == 3 || collision.gameObject.layer == 6 || collision.gameObject.layer == 7)
+        //Check for ground, enemy, object or wall is hit
+        if (collision.gameObject.layer == 3 || collision.gameObject.layer == 6 || collision.gameObject.layer == 7 || collision.gameObject.layer == 9)
         {
             Explode();
         }
