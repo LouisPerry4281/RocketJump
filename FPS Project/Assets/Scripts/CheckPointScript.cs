@@ -16,9 +16,14 @@ public class CheckPointScript : MonoBehaviour
         //Check for player later
         if (other.gameObject.layer == 8)
         {
-            gameManager.GetComponent<CheckPointManager>().ChangeSpawnLocation(transform.position);
-            gameManager.GetComponent<UIManager>().CheckpointReached();
-            Destroy(gameObject);
+            SetCheckpoint();
         }
+    }
+
+    public void SetCheckpoint()
+    {
+        gameManager.GetComponent<CheckPointManager>().ChangeSpawnLocation(transform.position);
+        gameManager.GetComponent<UIManager>().CheckpointReached();
+        gameObject.SetActive(false);
     }
 }

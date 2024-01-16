@@ -16,12 +16,6 @@ public class CheckPointManager : MonoBehaviour
         respawnPos = player.transform.position;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-            RespawnPlayer();
-    }
-
     public void ChangeSpawnLocation(Vector3 newPos)
     {
         respawnPos = newPos;
