@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 52457805231428038}
   - component: {fileID: 52457805231428033}
   - component: {fileID: 1985426477023738262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 52457805310117608}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 52457805802293421}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Camera Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 52457806123193495}
   - component: {fileID: 2883372030580352276}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 52457806493923619}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Ground Check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 7140304359248471453}
   - component: {fileID: 7069144980949835400}
   - component: {fileID: 252625538}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -331,10 +331,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: {fileID: 52457805310117608}
-  moveSpeed: 12
+  moveSpeed: 20
   airMultiplier: 0.4
-  walkSpeed: 6
-  sprintSpeed: 8
+  walkSpeed: 8
+  sprintSpeed: 10
   acceleration: 50
   jumpForce: 20
   coyoteTime: 0.1
@@ -389,6 +389,9 @@ MonoBehaviour:
   wallRunfovTime: 10
   camTilt: 10
   camTiltTime: 10
+  wallRunLayer:
+    serializedVersion: 2
+    m_Bits: 512
   dj: {fileID: 7140304359248471453}
 --- !u!114 &7140304359248471453
 MonoBehaviour:
@@ -544,7 +547,7 @@ GameObject:
   - component: {fileID: 862761859624311433}
   - component: {fileID: 862761859624311435}
   - component: {fileID: 862761859624311434}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5354,7 +5357,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 862761860224527250}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Particle Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5385,7 +5388,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7544772178368955693}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _PlayerPrefab
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5418,7 +5421,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5246593430352012063}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun Holster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5450,11 +5453,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 171527776781687000, guid: 67a7e24bd17106e44b96414cadeb93f0, type: 3}
       propertyPath: m_Name
-      value: Rocket Launcher
+      value: RocketLauncher
+      objectReference: {fileID: 0}
+    - target: {fileID: 171527776781687000, guid: 67a7e24bd17106e44b96414cadeb93f0, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 171527776781687000, guid: 67a7e24bd17106e44b96414cadeb93f0, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 464400116022313441, guid: 67a7e24bd17106e44b96414cadeb93f0, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 660537340789195362, guid: 67a7e24bd17106e44b96414cadeb93f0, type: 3}
       propertyPath: m_RootOrder
@@ -5507,6 +5518,10 @@ PrefabInstance:
     - target: {fileID: 3744843737536380597, guid: 67a7e24bd17106e44b96414cadeb93f0, type: 3}
       propertyPath: m_CastShadows
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9168417505693255288, guid: 67a7e24bd17106e44b96414cadeb93f0, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67a7e24bd17106e44b96414cadeb93f0, type: 3}

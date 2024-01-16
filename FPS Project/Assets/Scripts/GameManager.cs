@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,11 +21,11 @@ public class GameManager : MonoBehaviour
                 KillEnemy(objToKill);
                 break;
 
-            case 7: //Player Layer
+            case 8: //Player Layer
                 KillPlayer();
                 break;
 
-            case 8: //Random Object Layer
+            case 7: //Random Object Layer
                 KillObject(objToKill);
                 break;
         }
@@ -45,5 +46,16 @@ public class GameManager : MonoBehaviour
     {
         enemy.transform.position = new Vector3(1000, 1000, 1000);
         enemy.GetComponentInChildren<MeshRenderer>().enabled = false;
+    }
+
+    public void WinSequence()
+    {
+        GetComponent<UIManager>().WinText();
+        Invoke(nameof(MainMenu), 3);
+    }
+
+    void MainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

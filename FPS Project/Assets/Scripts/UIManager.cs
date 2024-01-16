@@ -6,6 +6,7 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI checkpointText;
+    [SerializeField] TextMeshProUGUI winText;
 
     bool checkpointTextBool = false;
 
@@ -31,5 +32,10 @@ public class UIManager : MonoBehaviour
     {
         checkpointTextBool = true;
         timeElapsed = 1;
+    }
+
+    public void WinText()
+    {
+        winText.gameObject.SetActive(true);
     }
 }

@@ -13,7 +13,6 @@ public class Cleanup : MonoBehaviour
 
     private void CleanUp()
     {
-        print("cleanup");
         Destroy(gameObject);
     }
 }
