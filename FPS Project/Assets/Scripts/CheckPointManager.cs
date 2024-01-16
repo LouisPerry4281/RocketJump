@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CheckPointManager : MonoBehaviour
 {
+    public delegate void RespawnAction();
+    public static event RespawnAction OnRespawn;
+
     Vector3 respawnPos;
     GameObject player;
 
@@ -28,7 +31,8 @@ public class CheckPointManager : MonoBehaviour
     {
         player.transform.position = respawnPos;
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        //Add Enemy Spawn Later
+        if (OnRespawn != null)
+            OnRespawn();
     }
 
 }

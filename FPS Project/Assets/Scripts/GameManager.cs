@@ -32,7 +32,8 @@ public class GameManager : MonoBehaviour
     
     private void KillObject(GameObject debris)
     {
-        Destroy(debris);
+        debris.transform.position = new Vector3(1000, 1000, 1000);
+        debris.GetComponentInChildren<MeshRenderer>().enabled = false;
     }
 
     private void KillPlayer()
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
 
     private void KillEnemy(GameObject enemy)
     {
-        Destroy(enemy);
+        enemy.transform.position = new Vector3(1000, 1000, 1000);
+        enemy.GetComponentInChildren<MeshRenderer>().enabled = false;
     }
 }
