@@ -25,6 +25,8 @@ public class WallRun : MonoBehaviour
 
     public float tilt { get; private set; }
 
+    [SerializeField] LayerMask wallRunLayer;
+
     private bool wallLeft = false;
     private bool wallRight = false;
 
@@ -49,8 +51,8 @@ public class WallRun : MonoBehaviour
     void CheckWall()
     {
         //Shoots a raycast either side of the player to check if there's a wall within range
-        wallLeft = Physics.Raycast(transform.position, -orientation.right, out leftWallHit, wallDistance);
-        wallRight = Physics.Raycast(transform.position, orientation.right, out rightWallHit, wallDistance);
+        wallLeft = Physics.Raycast(transform.position, -orientation.right, out leftWallHit, wallDistance, wallRunLayer);
+        wallRight = Physics.Raycast(transform.position, orientation.right, out rightWallHit, wallDistance, wallRunLayer);
     }
 
     private void Update()
