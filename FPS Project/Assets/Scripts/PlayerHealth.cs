@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     GameManager gameManager;
+    AudioManager audioManager;
 
     [SerializeField] float maxHealth;
     [SerializeField] float healingRate;
@@ -20,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        audioManager = GetComponent<AudioManager>();
 
         currentHealth = maxHealth;
     }
@@ -62,6 +64,8 @@ public class PlayerHealth : MonoBehaviour
         print("Ouchies: " + damageToTake + " damage!");
         currentHealth -= damageToTake;
         outOfDangerTimer = recoveryDelay;
+
+        audioManager.PlaySound(1);
 
         CheckHealth();
     }

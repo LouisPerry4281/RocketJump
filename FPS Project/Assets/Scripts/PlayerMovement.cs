@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     [SerializeField] Transform orientation;
+    [HideInInspector] public AudioManager audioManager;
 
     [Header("Movement")]
     [SerializeField] float moveSpeed = 6f;
@@ -71,6 +72,8 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        audioManager = GetComponent<AudioManager>();
     }
 
     private void Update()
@@ -122,6 +125,8 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
         coyoteTimeCounter = 0f;
+
+        audioManager.PlaySound(0);
     }
 
     void ControlSpeed()

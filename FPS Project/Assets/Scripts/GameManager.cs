@@ -7,10 +7,12 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     CheckPointManager checkPointManager;
+    AudioManager playerAudioManager;
 
     private void Start()
     {
         checkPointManager = GetComponent<CheckPointManager>();
+        playerAudioManager = GameObject.Find("Player").GetComponent<AudioManager>();
     }
 
     public void ScanKillTarget(GameObject objToKill)
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour
 
     private void KillPlayer()
     {
+        playerAudioManager.PlaySound(1);
         checkPointManager.RespawnPlayer();
     }
 

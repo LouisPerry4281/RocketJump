@@ -18,9 +18,12 @@ public class EnemyBehaviour : MonoBehaviour
 
     Transform playerTrans;
 
+    AudioManager audioManager;
+
     private void Awake()
     {
         playerTrans = GameObject.Find("Player").GetComponent<Transform>();
+        audioManager = GetComponent<AudioManager>();
     }
 
     private void Update()
@@ -50,6 +53,7 @@ public class EnemyBehaviour : MonoBehaviour
         Vector3 bulletDir = playerTrans.position - bulletInstance.transform.position;
         bulletInstance.GetComponent<Rigidbody>().velocity = bulletDir * shotSpeed;
 
+        audioManager.PlaySound(0);
 
         yield return new WaitForSeconds(reloadTime);
 

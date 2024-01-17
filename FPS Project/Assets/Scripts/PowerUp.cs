@@ -5,6 +5,7 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour
 {
     [SerializeField] GameObject rocketLauncherReference;
+    [SerializeField] AudioManager playerAudioManager;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,6 +19,7 @@ public class PowerUp : MonoBehaviour
     private void EnableRocket()
     {
         rocketLauncherReference.SetActive(true);
+        playerAudioManager.PlaySound(2);
         Destroy(gameObject);
     }
 }

@@ -6,8 +6,6 @@ public class DoubleJump : MonoBehaviour
 {
     [SerializeField] PlayerMovement playerMovement;
 
-
-
     public bool extraJump = true;
     public bool isWallRunning = false;
 
@@ -20,6 +18,9 @@ public class DoubleJump : MonoBehaviour
             {
                 //If player also has a double jump available, disable the double jump, change the ui to match
                 extraJump = false;
+
+                playerMovement.audioManager.PlaySound(0);
+
                 //Zero out the player's y velocity and add jump force to it
                 playerMovement.rb.velocity = new Vector3(playerMovement.rb.velocity.x, 0, playerMovement.rb.velocity.z);
                 playerMovement.rb.AddForce(transform.up * playerMovement.jumpForce, ForceMode.Impulse);

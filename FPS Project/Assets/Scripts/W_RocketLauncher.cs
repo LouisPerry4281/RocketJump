@@ -8,6 +8,7 @@ public class W_RocketLauncher : MonoBehaviour
     [SerializeField] Transform rocketRespawner;
     [SerializeField] GameObject rocketPrefab;
     GameObject rocketInstance;
+    AudioManager audioManager;
 
     [Header("Weapon Variables")]
     [SerializeField] float reloadSpeed;
@@ -20,6 +21,8 @@ public class W_RocketLauncher : MonoBehaviour
     {
         rocketInstance = Instantiate(rocketPrefab, rocketRespawner);
         rocketInstance.GetComponent<Rocket>().Initialise(damage, shotSpeed);
+
+        audioManager = GetComponent<AudioManager>();
     }
 
     private void Update()
@@ -34,6 +37,8 @@ public class W_RocketLauncher : MonoBehaviour
     {
         rocketInstance.GetComponent<Rocket>().LaunchRocket();
         isReloaded = false;
+
+        audioManager.PlaySound(0);
 
         Invoke("Reload", reloadSpeed);
     }
