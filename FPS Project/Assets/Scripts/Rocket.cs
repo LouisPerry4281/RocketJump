@@ -7,6 +7,7 @@ public class Rocket : MonoBehaviour
     Rigidbody rb;
     [SerializeField] GameObject explosionObject;
     AudioManager rocketAudioManager;
+    GameObject gameManager;
 
     private float damageNum;
     private float shotSpeedNum;
@@ -21,6 +22,8 @@ public class Rocket : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rocketAudioManager = GameObject.Find("RocketLauncher").GetComponent<AudioManager>();
+
+        gameManager = GameObject.Find("GameManager");
     }
 
     public void Initialise(float damage, float shotSpeed)
@@ -57,6 +60,9 @@ public class Rocket : MonoBehaviour
         hasExploded = true;
 
         Instantiate(explosionObject, transform.position, Quaternion.identity);
+
+        gameManager.GetComponent<CameraShake>().shakeDuration = 0.4f;
+        gameManager.GetComponent<CameraShake>().shakeAmount = 0.1f;
 
         rocketAudioManager.PlaySound(1);
 
