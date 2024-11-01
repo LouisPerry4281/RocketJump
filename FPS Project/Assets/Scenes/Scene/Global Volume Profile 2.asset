@@ -18,10 +18,10 @@ MonoBehaviour:
     m_Value: 0.8
   intensity:
     m_OverrideState: 1
-    m_Value: 3.97
+    m_Value: 3.13
   scatter:
     m_OverrideState: 1
-    m_Value: 0.293
+    m_Value: 0.202
   clamp:
     m_OverrideState: 0
     m_Value: 65472
@@ -117,5 +117,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   intensity:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 0.639

@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WallRun : MonoBehaviour
@@ -18,6 +20,8 @@ public class WallRun : MonoBehaviour
     [Header("Camera")]
     [SerializeField] private Camera cam;
     [SerializeField] private float fov;
+    [SerializeField] private float maxFOV = 120;
+    [SerializeField] private float minFOV = 90;
     [SerializeField] private float wallRunfov;
     [SerializeField] private float wallRunfovTime;
     [SerializeField] private float camTilt;
@@ -57,6 +61,7 @@ public class WallRun : MonoBehaviour
 
     private void Update()
     {
+        SpeedFOVCalc();
         CheckWall();
 
         //If there is a wall within range and the player can wallrun, wallrun, else stop wallrunning
@@ -79,6 +84,20 @@ public class WallRun : MonoBehaviour
         {
             StopWallRun();
         }
+    }
+
+    private void SpeedFOVCalc()
+    {
+        float speed = rb.velocity.magnitude;
+
+        float speedFOVModifier = (speed - 12) / (40 - 12);
+
+        if (speed < 12)
+            fov = minFOV;
+        else if (speed > 40)
+            fov = maxFOV;
+        else
+            fov = Mathf.Lerp(minFOV, maxFOV, speedFOVModifier);
     }
 
     void StartWallRun()

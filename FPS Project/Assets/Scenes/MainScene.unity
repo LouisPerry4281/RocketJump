@@ -8665,15 +8665,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 52457806613177457, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -1.4
       objectReference: {fileID: 0}
     - target: {fileID: 52457806613177457, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.9
+      value: 22.4
       objectReference: {fileID: 0}
     - target: {fileID: 52457806613177457, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 654.5
+      value: 678.4
       objectReference: {fileID: 0}
     - target: {fileID: 52457806877518829, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
       propertyPath: m_Enabled
@@ -8682,6 +8682,18 @@ PrefabInstance:
     - target: {fileID: 52457806877518829, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
       propertyPath: m_CastShadows
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395014212043849538, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
+      propertyPath: maxFOV
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395014212043849538, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
+      propertyPath: minFOV
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395014212043849538, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
+      propertyPath: wallRunfov
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6680485920623584097, guid: 10aacc61d7df74942b21ef204258c4d0, type: 3}
       propertyPath: m_Name
